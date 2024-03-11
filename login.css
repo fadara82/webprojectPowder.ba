@@ -1,0 +1,102 @@
+body {
+  height: 700px;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  gap: 5px;
+}
+.registrationdiv {
+  height: 500px;
+  width: 650px;
+  background-color: white;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin: 5px;
+  color: orangered;
+}
+
+.rform {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rinput {
+  width: 360px;
+  height: 35px;
+}
+
+p {
+  margin: 3px 0px;
+}
+
+.br {
+  height: 45px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  width: 368px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Use the parent element's color */
+}
+
+.qr {
+  margin-top: -10px;
+  text-align: center;
+}
+
+.rl {
+  background-color: white;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-bottom: 20px; */
+}
+
+.left {
+  height: 100px;
+  width: 325px;
+  display: flex;
+}
+
+.right {
+  height: 100px;
+  width: 325px;
+  display: flex;
+}
+
+.btnr {
+  height: 100px;
+  width: 327px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  font-weight: bold;
+  border-right: solid #e8e8e8;
+  border-bottom: solid #e8e8e8;
+  border-top: none;
+  border-left: none;
+  color: black;
+}

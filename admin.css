@@ -1,0 +1,324 @@
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("img/slika1.jpg");
+  background-color: #cccccc;
+  background-size: cover;
+}
+.code {
+  height: 30px;
+  width: 100%;
+  background-color: orangered;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.firstorder {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.topbar {
+  height: 55px;
+  width: 100%;
+  background-color: black;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  /* margin-top: -8px;
+      margin-left: -8px; */
+  display: flex;
+  gap: 10px;
+  flex: 1 2;
+}
+
+.item1 {
+  margin-left: 15px;
+}
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  color: whitesmoke;
+  border-right: whitesmoke solid 2px;
+  display: flex;
+  flex-basis: 160px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+
+.item4 {
+  flex-basis: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  width: 450px;
+  height: 25px;
+  position: relative;
+  padding: 5px;
+  border: black 0px;
+}
+
+.searchBtn {
+  margin-left: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20%;
+}
+
+.cl {
+  color: white;
+  background-color: black;
+  border: black;
+  width: 150px;
+  height: 55px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.fontNav {
+  /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.cat {
+  border: solid black;
+  background-color: white;
+  height: 200px;
+  width: 180px;
+  /* position: absolute; */
+  margin-top: 75px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-evenly;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  background-image: white;
+  position: fixed;
+}
+
+.catBrandText {
+  font-size: 15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.chc {
+  height: 14px;
+  width: 14px;
+}
+
+.catbrandsHead {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brands {
+  border: solid black;
+  background-color: white;
+  height: 270px;
+  width: 180px;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-evenly;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  position: fixed;
+}
+
+.brandHead {
+  margin-top: 2px;
+}
+
+.shop {
+  width: 1065px;
+  height: 800px;
+  position: absolute;
+  margin-left: 260px;
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: repeat(3, 300px);
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5%;
+  padding-top: 10px;
+}
+
+.removeeditDiv {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5%;
+}
+
+.reBtn {
+  width: 30px;
+  height: 25px;
+  margin: 0px 5px;
+}
+
+.imgdiv {
+  height: 60%;
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.imgtext {
+  height: 37%;
+  width: 100%;
+  border-radius: 5%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: gainsboro;
+}
+
+.shopBtn {
+  height: 25px;
+  width: 150px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  letter-spacing: 1.25px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-weight: bold; */
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.ptekst {
+  margin: 1px;
+  /* padding-top: 0.5px;
+    padding-bottom: 0.5px;*/
+}
+
+.sort {
+  height: 30px;
+  width: 182px;
+  background-color: white;
+  position: absolute;
+  margin-left: 920px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+
+select,
+option {
+  border: solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.pages {
+  width: 860px;
+  height: 70px;
+  position: absolute;
+  margin-left: 260px;
+  margin-top: 1100px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageBtn {
+  background-color: orangered;
+  color: white;
+  height: 40px;
+  width: 40px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.am {
+  height: 250px;
+  width: 230px;
+  margin-right: 20px;
+  margin-left: 1100px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+  border-radius: 5%;
+}
+
+.b {
+  height: 50px;
+  width: 170px;
+  border-radius: 5%;
+  border: none;
+  color: white;
+  background-color: black;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-radius: 10%;
+}
