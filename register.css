@@ -55,6 +55,9 @@ p {
   width: 368px;
 }
 
+.heading {
+}
+
 a {
   text-decoration: none;
   color: inherit; /* Use the parent element's color */
