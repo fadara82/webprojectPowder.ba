@@ -162,7 +162,7 @@ a {
 }
 
 .shop {
-  width: 1065px;
+  width: 900px;
   height: 800px;
   position: absolute;
   margin-left: 260px;
@@ -297,7 +297,7 @@ option {
 }
 
 .am {
-  height: 250px;
+  height: 315px;
   width: 230px;
   margin-right: 20px;
   margin-left: 1100px;
@@ -321,4 +321,8 @@ option {
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border-radius: 10%;
+}
+
+.blur {
+  filter: blur(5px);
 }
