@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  height: 620px;
+  width: 100%;
+  /* background-image: url("img/slika1.jpg"); */
+  background-color: #cccccc;
+  background-size: auto;
+}
+
+.code {
+  height: 30px;
+  width: 100%;
+  background-color: orangered;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar {
+  height: 55px;
+  width: 100%;
+  background-color: black;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  /* margin-top: -8px;
+        margin-left: -8px; */
+  display: flex;
+  gap: 10px;
+  flex: 2 2;
+}
+.item1 {
+  margin-left: 15px;
+}
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  color: whitesmoke;
+  border-right: whitesmoke solid 2px;
+  display: flex;
+  flex-basis: 160px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+
+.item4 {
+  flex-basis: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  width: 450px;
+  height: 25px;
+  position: relative;
+  padding: 5px;
+  border: black 0px;
+}
+
+.searchBtn {
+  margin-left: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20%;
+}
+
+.cl {
+  color: white;
+  background-color: black;
+  border: black;
+  width: 150px;
+  height: 55px;
+  text-align: center;
+}
+
+.fontNav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* Use the parent element's color */
+}
+
+.bimage {
+  height: 610px;
+  width: 100%;
+  margin-top: 20px;
+  /* background-image: url(img/yhb8Dr.webp); */
+  background-color: black;
+  background-size: cover;
+}
+
+.bimagetext {
+  width: 700px;
+  height: 400px;
+  margin-top: -490px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  font-size: 21px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  justify-content: center;
+  align-items: start;
+}
+
+.shopBtn {
+  height: 45px;
+  width: 180px;
+  background-color: orangered;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+}
+
+.firstorder {
+  padding: 5px;
+}

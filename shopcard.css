@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  height: 1100px;
+  width: 100%;
+  background-image: url("img/slika1.jpg");
+  background-color: #cccccc;
+  background-size: cover;
+}
+
+.code {
+  height: 30px;
+  width: 100%;
+  background-color: orangered;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+.topbar {
+  height: 55px;
+  width: 100%;
+  background-color: black;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  /* margin-top: -8px;
+      margin-left: -8px; */
+  display: flex;
+  /* gap:10px ; */
+  flex: 2 2;
+}
+.item1 {
+  margin-left: 15px;
+}
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  color: whitesmoke;
+  border-right: whitesmoke solid 2px;
+  display: flex;
+  flex-basis: 160px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+
+.item4 {
+  flex-basis: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  width: 450px;
+  height: 25px;
+  position: relative;
+  padding: 5px;
+  border: black 0px;
+}
+
+.searchBtn {
+  margin-left: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20%;
+}
+
+.cl {
+  color: white;
+  background-color: black;
+  border: black;
+  width: 150px;
+  height: 55px;
+  text-align: center;
+}
+
+.fontNav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* Use the parent element's color */
+}
+
+.shopCard {
+  height: 480px;
+  width: 1017px;
+  background-color: white;
+  margin: 90px 173px;
+  display: flex;
+  justify-content: start;
+}
+
+.shopCardS {
+  height: 100%;
+  width: 50%;
+}
+
+.shopCardleft {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid black; */
+}
+
+.shopCardImg {
+  height: 450px;
+  margin: 5px;
+  width: 95%;
+}
+
+.shopCardright {
+  /* border: solid black; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding-left: 35px;
+  padding-right: 20px;
+  font-size: 17px;
+}
+
+.sh {
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  margin: 0px;
+}
+.price {
+  color: orangered;
+}
+.addtoCart {
+  height: 45px;
+  width: 180px;
+  background-color: orangered;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+  color: white;
+  font-size: 17px;
+  letter-spacing: 1.25px;
+}
+
+.quantityCh {
+  height: 20px;
+  width: 30px;
+}
+
+.addtoCartQuantity {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flavour {
+  margin: 1px;
+}
+
+.firstorder {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}

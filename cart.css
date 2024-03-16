@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  /* background-image: url("img/slika1.jpg");
+  background-color: #cccccc;
+  background-size: cover; */
+  background-color: #dcdcdc;
+}
+
+.code {
+  height: 30px;
+  width: 100%;
+  background-color: orangered;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+.topbar {
+  height: 55px;
+  width: 100%;
+  background-color: black;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  /* margin-top: -8px;
+        margin-left: -8px; */
+  display: flex;
+  gap: 10px;
+  flex: 2 2;
+}
+.item1 {
+  margin-left: 15px;
+}
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  color: whitesmoke;
+  border-right: whitesmoke solid 2px;
+  display: flex;
+  flex-basis: 160px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+
+.item4 {
+  flex-basis: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  width: 450px;
+  height: 25px;
+  position: relative;
+  padding: 5px;
+  border: black 0px;
+}
+
+.searchBtn {
+  margin-left: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20%;
+}
+
+.cl {
+  color: white;
+  background-color: black;
+  border: black;
+  width: 150px;
+  height: 55px;
+  text-align: center;
+}
+
+.fontNav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* Use the parent element's color */
+}
+
+.shopCart {
+  height: 480px;
+  width: 1200px;
+  margin: 90px 70px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+
+.items {
+  height: 600px;
+  width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: start;
+  align-items: start;
+}
+
+.item1Cart {
+  height: 150px;
+  width: 100%;
+}
+/* .split {
+  height: 50%;
+  width: 100%;
+} */
+
+.div1itemcart {
+  background-color: white;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  border-bottom: solid #e8e8e8;
+}
+
+.imgdiv {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.imgadapt {
+  height: 80px;
+  width: 80px;
+  border-radius: 5%;
+}
+.cttextdiv {
+  height: 100%;
+  width: 75%;
+  background-color: white;
+  padding-left: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btndeletediv {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.itemhead {
+  font-weight: bolder;
+  font-size: 17px;
+  margin-top: 5px;
+}
+.removeBtn {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border: none;
+}
+
+.div2itemcart {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  background-color: white;
+}
+
+.price {
+  height: 100%;
+  width: 30%;
+  background-color: white;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hdiv2 {
+  color: black;
+  font-size: 17px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.pprice {
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+}
+
+p {
+  margin: 0px;
+}
+
+.quantity {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+}
+
+.inputnmbr {
+  height: 20px;
+  width: 250px;
+}
+
+.cartpricedetails {
+  height: 280px;
+  width: 420px;
+  background-color: white;
+  border-radius: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.firstdivcpd {
+  height: 15%;
+  width: 70%;
+  background-color: white;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: solid #dcdcdc;
+}
+
+.seconddivcpd {
+  height: 65%;
+  width: 70%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.horder {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 23px;
+}
+
+.Cartprice {
+  height: 30%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutBtn {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 40px;
+  width: 200px;
+  background-color: orangered;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  border: none;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

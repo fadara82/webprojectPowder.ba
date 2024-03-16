@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+}
+.addtocartdiv {
+  height: 300px;
+  width: 450px;
+  background-color: lightgray;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+p {
+  margin: 0;
+  height: 30px;
+  width: 70%;
+}
+
+.b {
+  display: flex;
+  gap: 20px;
+}
+
+.itemb {
+  height: 30px;
+  width: 120px;
+  background-color: orangered;
+  border: none;
+  color: white;
+}
