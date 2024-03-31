@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="css/spapp.css" />
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  <body >
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal show" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Create</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="showEdit()">
+            X
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal body content goes here -->
+        <div style="display: flex;flex-direction: column;gap: 10px;"> 
+          <div style="display: flex; justify-content: space-between;"><input type="file" name="" id=""><p>Add Image</p></div>
+          <div style="display: flex; justify-content: space-between;"><input type="text"><p>Desciption</p></div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name="" id="">Flavour</div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name="" id="">Price</div>
+
+          </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="showEdit()">Close</button>
+        <button type="button" class="btn btn-primary onclick="showEdit()"">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <nav role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="homeNav">
+          <div class="container px-4 px-lg-5">
+            <a class="navbar-brand naslov" href="#!">Powder.ba</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                  <a class="nav-link active homara" aria-current="page" href="#main"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Shop</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#main">All Products</a></li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#!">Protein Powder</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Vitamins</a></li>
+                    <li><a class="dropdown-item" href="#!">Creatine</a></li>
+                    <li><a class="dropdown-item" href="#!">Healthy Bars</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Brands</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">All Brands</a></li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#!">Optimum Nutrition</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#!">KFD</a></li>
+                    <li><a class="dropdown-item" href="#!">My Protein</a></li>
+                    <li><a class="dropdown-item" href="#!">Healthy Bars</a></li>
+                    <li><a class="dropdown-item" href="#!">Real Pharm</a></li>
+                    <li><a class="dropdown-item" href="#!">Domestic.ba</a></li>
+                    <li><a class="dropdown-item" href="#!">Proteini.si</a></li>
+                    <li><a class="dropdown-item" href="#!">Others</a></li>
+                  </ul>
+                </li>
+                
+                <form
+                  class="form-inline my-2 my-lg-0"
+                  style="display: flex; gap: 5px"
+                >
+                  <input
+                    class="form-control mr-sm-2 search"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0 search"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                    
+                   
+                      
+                  </li>
+                </form>
+              </ul>
+
+              <form class="d-flex">
+                <button class="btn btn-outline-dark" type="submit">
+                  <i class="bi-cart-fill me-1"></i>
+                  <a href="#shopingcart"> Cart </a>
+
+                  <span
+                    class="badge bg-dark text-white ms-1 rounded-pill"
+                    id="cartnumber"
+                    >0</span
+                  >
+                </button>
+                <a href="#registration">
+                  <button type="button" class="btn btn-outline-dark">
+                    Logout
+                  </button>
+                </a>
+              </form>
+            </div>
+          </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="adminP">
+          <div class="container px-4 px-lg-5">
+            <a class="navbar-brand naslov" href="#!">Powder.ba</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                  <a
+                    href="#main"
+                    class="nav-link active homara"
+                    aria-current="page"
+                    href="#!"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item dropdown" id="shopo">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Shop</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a href="#main" class="dropdown-item" href="#!"
+                        >All Products</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#!">Protein Powder</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Vitamins</a></li>
+                    <li><a class="dropdown-item" href="#!">Creatine</a></li>
+                    <li><a class="dropdown-item" href="#!">Healthy Bars</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown" id="shopo2">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >🛍️</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a href="#main" class="dropdown-item" href="#!"
+                        >All Products</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#!">Protein Powder</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Vitamins</a></li>
+                    <li><a class="dropdown-item" href="#!">Creatine</a></li>
+                    <li><a class="dropdown-item" href="#!">Healthy Bars</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown" id="brando">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Brands</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">All Brands</a></li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#!">Optimum Nutrition</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#!">KFD</a></li>
+                    <li><a class="dropdown-item" href="#!">My Protein</a></li>
+                    <li><a class="dropdown-item" href="#!">Healthy Bars</a></li>
+                    <li><a class="dropdown-item" href="#!">Real Pharm</a></li>
+                    <li><a class="dropdown-item" href="#!">Domestic.ba</a></li>
+                    <li><a class="dropdown-item" href="#!">Proteini.si</a></li>
+                    <li><a class="dropdown-item" href="#!">Others</a></li>
+                  </ul>
+                   <li class="nav-item dropdown" id="brando2">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >B</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">All Brands</a></li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#!">Optimum Nutrition</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#!">KFD</a></li>
+                    <li><a class="dropdown-item" href="#!">My Protein</a></li>
+                    <li><a class="dropdown-item" href="#!">Healthy Bars</a></li>
+                    <li><a class="dropdown-item" href="#!">Real Pharm</a></li>
+                    <li><a class="dropdown-item" href="#!">Domestic.ba</a></li>
+                    <li><a class="dropdown-item" href="#!">Proteini.si</a></li>
+                    <li><a class="dropdown-item" href="#!">Others</a></li>
+                  </ul>
+                </li>
+                </li>
+                <form
+                  class="form-inline my-2 my-lg-0"
+                  style="display: flex; gap: 5px"
+                >
+                  <input
+                    class="form-control mr-sm-2 search"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0 search"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    onclick="hi()"
+                  >
+                    <strong id="adminop">Admin Options</strong>
+                    <strong id="adminop2">ADM</strong> </a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" onclick="showEdit()">Add Product </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        id="editRemoveBtn"
+                        onclick="unhideER()"
+                        >Edit/Remove Product</a
+                      >
+                    </li>
+                    <li><a class="dropdown-item" href="#users">Users</a></li>
+                    <li><a class="dropdown-item" href="#orders">Orders</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <form class="d-flex">
+                <button class="btn btn-outline-dark"  >
+                  <i class="bi-cart-fill me-1"></i>
+                  <a href="#shopingcart">Cart</a>
+                  <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartnumber"
+                    >0</span
+                  >
+                </button>
+                <a href="#login">
+                  <button type="button" class="btn btn-outline-dark">
+                    Logout
+                  </button>
+                </a>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </ul>
+    </nav>
+    <main id="spapp" role="main">
+      <section id="registration"></section>
+      <section id="login"></section>
+      <section id="shopitem"></section>
+      <section id="shopingcart"></section>
+      <section id="users"></section>
+      <section id="orders"></section>
+      <section id="checkout"></section>
+      <section id="admin"></section>
+
+      <section id="main" data-load="home.html"></section>
+    </main>
+
+
+<!-- Modal -->
+<div class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">DELETE </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="showModal()">
+         X
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this?
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="showModal()">Close</button>
+        <button type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  </body>
+  <script src="js/jquery.spapp.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+</html>
