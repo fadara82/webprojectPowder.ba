@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="css/spapp.css" />
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70.0-2014.11.23/jquery.blockUI.min.js"></script>
+
+
+  </head>
+  <body >
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<form id="modalje">
+<div class="modal show" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Create</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="showEdit()">
+            X
+        </button>
+      </div>
+      <div class="modal-body" id="modal">
+        <!-- Modal body content goes here -->
+        <div style="display: flex;flex-direction: column;gap: 10px;"> 
+          
+          <div style="display: flex; justify-content: space-between;"><input type="text" name="image" id="addimage"><p>Add Image link</p></div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name="productName" id="productName"><p>Product Name</p></div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name="flavour" id="flavour">Flavour</div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name="price" id="price">Price</div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name='desc' id="desc"><p>Description</p></div>
+          <div style="display: flex; justify-content: space-between;"><input type="text" name='category' id="category"><p>Category</p></div>
+
+
+          </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="showEdit()">Close</button>
+<button type="submit" class="btn btn-primary" id="p" onclick="sendData()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+    <nav role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="homeNav">
+          <div class="container px-4 px-lg-5">
+            <a class="navbar-brand naslov" href="#!">Powder.ba</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                  <a class="nav-link active homara" aria-current="page" href="#main"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Shop</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#main">All Products</a></li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" onclick="getProteini()">Protein Powder</a>
+                    </li>
+                    <li><a class="dropdown-item" onclick="getVitamini()">Vitamins</a></li>
+                    <li><a class="dropdown-item" onclick="getKreatin()">Creatine</a></li>
+                    <li><a class="dropdown-item" onclick="getCokoladice()">Healthy Bars</a></li>
+                  </ul>
+                </li>
+             
+                
+                <form
+                  class="form-inline my-2 my-lg-0"
+                  style="display: flex; gap: 5px"
+                >
+                  <input
+                    class="form-control mr-sm-2 search"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0 search"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                    
+                   
+                      
+                  </li>
+                </form>
+              </ul>
+
+              <form class="d-flex">
+                <button class="btn btn-outline-dark" type="submit">
+                  <i class="bi-cart-fill me-1"></i>
+                  <a href="#shopingcart"> Cart </a>
+
+                  <span
+                    class="badge bg-dark text-white ms-1 rounded-pill"
+                    id="cartnumber"
+                    >0</span
+                  >
+                </button>
+                  <button type="button" class="btn btn-outline-dark" onclick="logout()">
+                    Logout
+                  </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="adminP">
+          <div class="container px-4 px-lg-5">
+            <a class="navbar-brand naslov" href="#!">Powder.ba</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                  <a
+                    href="#main"
+                    class="nav-link active homara"
+                    aria-current="page"
+                    href="#!"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item dropdown" id="shopo">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Shop</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a href="#main" class="dropdown-item" href="#!"
+                        >All Products</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" onclick="getProteini()">Protein Powder</a>
+                    </li>
+                    <li><a class="dropdown-item" onclick="getVitamini()">Vitamins</a></li>
+                    <li><a class="dropdown-item" onclick="getKreatin()">Creatine</a></li>
+                    <li><a class="dropdown-item" onclick="getCokoladice()">Healthy Bars</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown" id="shopo2">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >🛍️</a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a href="#main" class="dropdown-item" href="#!"
+                        >All Products</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" onclick="getProteini()">Protein Powder</a>
+                    </li>
+                    <li><a class="dropdown-item" onclick="getVitamini()">Vitamins</a></li>
+                    <li><a class="dropdown-item" onclick="getKreatin()">Creatine</a></li>
+                    <li><a class="dropdown-item" onclick="getCokoladice()">Healthy Bars</a></li>
+                  </ul>
+                </li>
+                
+                <form
+                  class="form-inline my-2 my-lg-0"
+                  style="display: flex; gap: 5px"
+                >
+                  <input
+                    class="form-control mr-sm-2 search"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0 search"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <strong id="adminop">Admin Options</strong>
+                    <strong id="adminop2">ADM</strong> </a
+                  >
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" onclick="showEdit()">Add Product </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        id="editRemoveBtn"
+                        onclick="unhideER()"
+                        >Edit/Remove Product</a
+                      >
+                    </li>
+                    <li><a class="dropdown-item" href="#users">Users</a></li>
+                    <li><a class="dropdown-item" href="#orders">Orders</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <form class="d-flex">
+                <button class="btn btn-outline-dark"  >
+                  <i class="bi-cart-fill me-1"></i>
+                  <a href="#shopingcart">Cart</a>
+                  <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartnumber"
+                    >0</span
+                  >
+                </button>
+                  <button type="button" class="btn btn-outline-dark" onclick="logout()">
+                    Logout
+                  </button>
+               
+              </form>
+            </div>
+          </div>
+        </nav>
+      </ul>
+    </nav>
+    <main id="spapp" role="main">
+      <section id="registration"></section>
+      <section id="login"></section>
+      <section id="shopitem"></section>
+      <section id="shopingcart"></section>
+      <section id="users"></section>
+      <section id="orders"></section>
+      <section id="checkout"></section>
+      <section id="admin"></section>
+
+      <section id="main" data-load="home.html"></section>
+    </main>
+
+
+<!-- Modal -->
+<div class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CONFIRMATION</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="showModal()">
+         X
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure?
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="showModal()">Close</button>
+        <button type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  </body>
+  <script src="js/jquery.spapp.js"></script>
+  <script src="js/custom.js"></script>
+
+ <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+    <script src="http://localhost/webprojectPowder.ba/webPowder.ba/js/scripts.js"></script>
+     <script src="http://localhost/webprojectPowder.ba/webPowder.ba/js/utilis.js"></script>
+<!-- <script>if (Utilis.get_from_localstorage("user")) {
+  window.location = "../#main";
+} else {
+  window.location = "../login";
+}</script> -->
+</html>
+backend/products/get
