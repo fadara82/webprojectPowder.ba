@@ -1,37 +1,33 @@
 $(document).ready(function () {
-  $("#adminP").hide();
-  if (
-    window.location.href === "http://localhost/webPowder.ba/#admin" ||
-    window.location.href === "http://localhost/webPowder.ba/#users" ||
-    window.location.href === "http://localhost/webPowder.ba/#orders"
-  ) {
-    $("#homeNav").hide();
-    $("#adminP").show();
-  }
-});
-
-$(document).ready(function () {
+  // Hide all elements initially
   $("#adminP").hide();
   $("#homeNav").hide();
-
   $("#exampleModale").hide();
   $("#exampleModal").hide();
-});
 
-$(document).ready(function () {
-  if (
-    window.location.href === "http://127.0.0.1:5500/index.html#admin" ||
-    window.location.href === "http://127.0.0.1:5500/index.html#users" ||
-    window.location.href === "http://127.0.0.1:5500/index.html#orders" ||
-    window.location.href === "http://127.0.0.1:5500/#admin"
-  ) {
+  const adminUrls = [
+    "http://localhost/webprojectPowder.ba/webPowder.ba/#admin",
+    "http://localhost/webprojectPowder.ba/webPowder.ba/#users",
+    "http://localhost/webprojectPowder.ba/webPowder.ba/#orders",
+    "http://127.0.0.1:5500/index.html#admin",
+    "http://127.0.0.1:5500/index.html#users",
+    "http://127.0.0.1:5500/index.html#orders",
+    "http://127.0.0.1:5500/#admin",
+  ];
+
+  const homeUrls = [
+    "http://127.0.0.1:5500/index.html#main",
+    "http://127.0.0.1:5500/index.html#shopitem",
+    "http://127.0.0.1:5500/index.html#shopingcart",
+    "http://127.0.0.1:5500/#main",
+    "http://localhost/webprojectPowder.ba/webPowder.ba/#main",
+  ];
+
+  const currentUrl = window.location.href;
+
+  if (adminUrls.includes(currentUrl)) {
     $("#adminP").show();
-  } else if (
-    window.location.href === "http://127.0.0.1:5500/index.html#main" ||
-    window.location.href === "http://127.0.0.1:5500/index.html#shopitem" ||
-    window.location.href === "http://127.0.0.1:5500/index.html#shopingcart" ||
-    window.location.href === "http://127.0.0.1:5500/#main"
-  ) {
+  } else if (homeUrls.includes(currentUrl)) {
     $("#homeNav").show();
   }
 });
@@ -51,6 +47,17 @@ $(document).ready(function () {
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products/get",
     method: "GET",
     dataType: "json",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#maindiv").empty(); // Clear the contents of #maindiv before appending new content
       console.log("Data loaded successfully:", data);
@@ -97,7 +104,18 @@ $(document).ready(function () {
   $.ajax({
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/orders/get",
     method: "GET",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
     dataType: "json",
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#tabeladiv").empty();
 
@@ -144,7 +162,18 @@ $(document).ready(function () {
   $.ajax({
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/users/get",
     method: "GET",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
     dataType: "json",
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#usersdiv").empty();
 
@@ -177,7 +206,19 @@ $(document).ready(function () {
   $.ajax({
     url: "cart.json",
     method: "GET",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
+
     dataType: "json",
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#usersdiv").empty();
 
@@ -245,7 +286,18 @@ function getId(id) {
   $.ajax({
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products/get/byid",
     method: "GET",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
     data: { id: id },
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (response) {
       var item = response.find(function (item) {
         return item.id == id;
@@ -331,6 +383,17 @@ $(document).ready(function () {
         url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/orders",
         method: "POST",
         data: formData,
+        headers: {
+          Authentication: Utilis.get_from_localstorage("user").token,
+        },
+        beforeSend: function (xhr) {
+          if (Utilis.get_from_localstorage("user")) {
+            xhr.setRequestHeader(
+              "Authentication",
+              Utilis.get_from_localstorage("user").token
+            );
+          }
+        },
         success: function (response) {
           console.log("Form data sent successfully:", response);
         },
@@ -357,6 +420,17 @@ $(document).ready(function () {
         url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products",
         method: "POST",
         data: formData,
+        headers: {
+          Authentication: Utilis.get_from_localstorage("user").token,
+        },
+        beforeSend: function (xhr) {
+          if (Utilis.get_from_localstorage("user")) {
+            xhr.setRequestHeader(
+              "Authentication",
+              Utilis.get_from_localstorage("user").token
+            );
+          }
+        },
         success: function (response) {
           console.log("test");
           console.log("Form data sent successfully:", response);
@@ -371,7 +445,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#regform").validate({
-    /* rules: {
+    /*rules: {
       fname: {
         required: true,
         minlength: 2,
@@ -387,6 +461,10 @@ $(document).ready(function () {
       password: {
         required: true,
         minlength: 6,
+      },
+      cpassword: {
+        required: true,
+        equalTo: "#password", // Assuming you have an id="password" for the password field
       },
     },
     messages: {
@@ -408,19 +486,19 @@ $(document).ready(function () {
       },
       cpassword: {
         required: "Please confirm your password",
-        equalTo: password,
+        equalTo: "Passwords do not match",
       },
-    },
-    */
+    },*/
     submitHandler: function (form, event) {
       event.preventDefault();
 
       var formData = $(form).serialize();
 
       $.ajax({
-        url: "http://localhost/webprojectPowder.ba/webPowder.ba/backendusers",
+        url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/users",
         method: "POST",
         data: formData,
+
         success: function (response) {
           console.log("Form data sent successfully:", response);
           // Handle success response (e.g., display a success message)
@@ -433,11 +511,23 @@ $(document).ready(function () {
     },
   });
 });
+
 function getProteini() {
   $.ajax({
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products/get/protein",
     method: "GET",
     dataType: "json",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#maindiv").empty(); // Clear the contents of #maindiv before appending new content
       console.log("Data loaded successfully:", data);
@@ -485,6 +575,17 @@ function getVitamini() {
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products/get/vitamini",
     method: "GET",
     dataType: "json",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#maindiv").empty(); // Clear the contents of #maindiv before appending new content
       console.log("Data loaded successfully:", data);
@@ -531,7 +632,18 @@ function getKreatin() {
   $.ajax({
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products/get/creatine",
     method: "GET",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
     dataType: "json",
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#maindiv").empty(); // Clear the contents of #maindiv before appending new content
       console.log("Data loaded successfully:", data);
@@ -579,6 +691,17 @@ function getCokoladice() {
     url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/products/get/healthybar",
     method: "GET",
     dataType: "json",
+    headers: {
+      Authentication: Utilis.get_from_localstorage("user").token,
+    },
+    beforeSend: function (xhr) {
+      if (Utilis.get_from_localstorage("user")) {
+        xhr.setRequestHeader(
+          "Authentication",
+          Utilis.get_from_localstorage("user").token
+        );
+      }
+    },
     success: function (data) {
       $("#maindiv").empty(); // Clear the contents of #maindiv before appending new content
       console.log("Data loaded successfully:", data);
@@ -644,10 +767,10 @@ $(document).ready(function () {
         url: "http://localhost/webprojectPowder.ba/webPowder.ba/backend/login",
         method: "POST",
         data: formData,
+
         success: function (response) {
           Utilis.set_to_localstorage("user", response);
           console.log("Login Succesfull:", response);
-          window.location = "../#main";
         },
         error: function (xhr, status, error) {
           console.error("Error sending form data:", error);
@@ -659,4 +782,10 @@ $(document).ready(function () {
 
 function logout() {
   window.localStorage.clear();
+}
+
+if (Utilis.get_from_localstorage("user")) {
+  window.location = "http://localhost/webprojectPowder.ba/webPowder.ba/#main";
+} else {
+  window.location = "http://localhost/webprojectPowder.ba/webPowder.ba//#login";
 }

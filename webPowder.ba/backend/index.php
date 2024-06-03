@@ -1,6 +1,7 @@
 <?php
 
 require_once "vendor/autoload.php";
+require "rest/routes/middleware_routes.php";
 require "rest/routes/orders_routes.php";
 require "rest/routes/products_routes.php";
 require "rest/routes/users_routes.php";

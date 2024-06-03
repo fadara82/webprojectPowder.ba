@@ -7,7 +7,7 @@ error_reporting(E_ALL^(E_NOTICE | E_DEPRECATED));
 
 //db access
 
-define('DB_NAME','powder');
+define('DB_NAME','powderb');
 define('DB_USER','root');
 define('DB_PORT',3306);
 define('DB_PASSWORD','1234');
